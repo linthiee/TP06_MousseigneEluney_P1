@@ -6,10 +6,10 @@ class Archer : public RangedSoldier
 private:
 
 public:
-	Archer();
+	Archer(int minAttackDistance, int maxAttackDistance, float health, float stamina);
 	~Archer();
 
-	void attack(Soldier* objective) override;
+	void attack(Soldier* targets, int index) override;
 
 };
 

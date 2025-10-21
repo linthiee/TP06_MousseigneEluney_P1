@@ -6,9 +6,9 @@ class Crossbowman : public RangedSoldier
 private:
 
 public:
-	Crossbowman();
+	Crossbowman(int minAttackDistance, int maxAttackDistance, float health, float stamina);
 	~Crossbowman();
 
-	void attack(Soldier* objective) override;
+	void attack(Soldier* targets, int index) override;
 };
 

@@ -130,6 +130,8 @@
     <ClCompile Include="Archer.cpp" />
     <ClCompile Include="Crossbowman.cpp" />
     <ClCompile Include="Ejercicio01.cpp" />
+    <ClCompile Include="GameLoop.cpp" />
+    <ClCompile Include="Globals.cpp" />
     <ClCompile Include="Lancer.cpp" />
     <ClCompile Include="MeleeSoldier.cpp" />
     <ClCompile Include="RangedSoldier.cpp" />
@@ -139,6 +141,8 @@
   <ItemGroup>
     <ClInclude Include="Archer.h" />
     <ClInclude Include="Crossbowman.h" />
+    <ClInclude Include="GameLoop.h" />
+    <ClInclude Include="Globals.h" />
     <ClInclude Include="Lancer.h" />
     <ClInclude Include="MeleeSoldier.h" />
     <ClInclude Include="RangedSoldier.h" />

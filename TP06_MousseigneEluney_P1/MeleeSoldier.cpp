@@ -8,7 +8,7 @@ MeleeSoldier::~MeleeSoldier()
 {
 }
 
-void MeleeSoldier::attack()
+void MeleeSoldier::attack(Soldier* targets, int index)
 {
 }
 

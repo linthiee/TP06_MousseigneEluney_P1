@@ -13,6 +13,6 @@ public:
 	RangedSoldier(int minAttackDistance, int maxAttackDistance, float health, float stamina);
 	virtual ~RangedSoldier();
 
-	 void attack(Soldier* objective) override;
+	 void attack(Soldier* targets, int index) override;
 	 void rest() override;
 };

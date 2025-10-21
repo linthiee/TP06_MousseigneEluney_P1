@@ -6,9 +6,9 @@ class Swordsman : public MeleeSoldier
 private:
 
 public:
-	Swordsman();
+	Swordsman(int attackRadius, float health, float stamina);
 	~Swordsman();
 
-	 void attack(Soldier* objective) override;
+	 void attack(Soldier* targets, int index) override;
 
 };

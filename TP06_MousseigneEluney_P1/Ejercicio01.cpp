@@ -4,3 +4,18 @@ siguientes datos y funcionalidades:
 ? Cantidad de stamina.
 ? Atacar a otros personajes.
 ? Descansar.*/
+#include <ctime>
+#include <iostream>
+#include "GameLoop.h"
+
+static int size = 10;
+
+void main()
+{
+	srand(time(nullptr));
+	GameLoop* gameloop = new GameLoop();
+
+	gameloop->play();
+
+	delete gameloop;
+}

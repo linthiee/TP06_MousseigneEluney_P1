@@ -8,7 +8,7 @@ RangedSoldier::~RangedSoldier()
 {
 }
 
-void RangedSoldier::attack(Soldier* objective)
+void RangedSoldier::attack(Soldier* targets, int index)
 {
 }
 
