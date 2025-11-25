@@ -8,10 +8,8 @@ MeleeSoldier::~MeleeSoldier()
 {
 }
 
-void MeleeSoldier::attack(Soldier* targets, int index)
+bool MeleeSoldier::canReach(int distance)
 {
+	return distance <= attackRadius;
 }
 
-void MeleeSoldier::rest()
-{
-}

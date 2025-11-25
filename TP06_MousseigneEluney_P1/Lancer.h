@@ -1,15 +1,15 @@
 
 #pragma once
-#include "RangedSoldier.h"
+#include "MeleeSoldier.h"
 
-class Lancer : public RangedSoldier
+class Lancer : public MeleeSoldier
 {
 private:
 
 public:
-	Lancer(int minAttackDistance, int maxAttackDistance, float health, float stamina);
+	Lancer(int attackRadius, float health, float stamina);
 	~Lancer();
 
-	void attack(Soldier* targets, int index) override;
+	void attack(Soldier* target, int targetIdx, std::vector<Soldier*>& squad) override;
 };
 

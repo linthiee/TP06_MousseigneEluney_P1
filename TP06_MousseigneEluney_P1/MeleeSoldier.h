@@ -12,7 +12,6 @@ public:
 	MeleeSoldier(int attackRadius, float health, float stamina);
 	virtual ~MeleeSoldier();
 
-	void attack(Soldier* targets, int index) override;
-	void rest() override;
+	bool canReach(int distance) override;
 };
 

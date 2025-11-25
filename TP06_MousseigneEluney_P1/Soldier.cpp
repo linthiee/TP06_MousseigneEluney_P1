@@ -45,30 +45,13 @@ void Soldier::setIndex(int index)
 	this->index = index;
 }
 
+void Soldier::rest()
+{
+	stamina += 15; 
+	std::cout << "Soldier " << index << " is resting.\n";
+}
+
 int Soldier::getIndex()
 {
 	return index;
-}
-
-void Soldier::attack(Soldier* targets, int index)
-{
-	if (targets->getHealth() > 0)
-	{
-		std::cout << "the NPC attacked!" << std::endl;
-
-		removeStamina(10);
-
-		targets->removeHealth(20);
-	}
-	else
-	{
-		targets->setHealth(0);
-	}
-}
-
-void Soldier::rest()
-{
-	std::cout << "The NPC is resting!" << std::endl;
-	stamina++;
-
 }

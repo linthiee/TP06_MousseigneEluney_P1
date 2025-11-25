@@ -8,10 +8,8 @@ RangedSoldier::~RangedSoldier()
 {
 }
 
-void RangedSoldier::attack(Soldier* targets, int index)
+bool RangedSoldier::canReach(int distance)
 {
+	return distance >= minAttackDistance && distance <= maxAttackDistance;
 }
 
-void RangedSoldier::rest() 
-{
-}

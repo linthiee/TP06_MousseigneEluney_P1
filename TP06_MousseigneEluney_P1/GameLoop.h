@@ -13,7 +13,12 @@ enum class SoldierType
 class GameLoop
 {
 private:
+
 	std::vector<Soldier*> soldiers;
+
+	void update();
+	int countAlive();
+	void announceWinner();
 
 public:
 	GameLoop();
@@ -22,7 +27,6 @@ public:
 	void play();
 
 	void setRandomPlayers();
-	void update();
 
 };
 

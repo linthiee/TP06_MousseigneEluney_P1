@@ -2,7 +2,7 @@
 
 Archer::Archer(int minAttackDistance, int maxAttackDistance, float health, float stamina) : RangedSoldier(minAttackDistance, maxAttackDistance, health, stamina)
 {
-	this->maxAttackDistance = minAttackDistance;
+	this->minAttackDistance = minAttackDistance;
 	this->maxAttackDistance = maxAttackDistance;
 	this->health = health;
 	this->stamina = stamina;
@@ -12,23 +12,35 @@ Archer::~Archer()
 {
 }
 
-void Archer::attack(Soldier* targets, int index)
+void Archer::attack(Soldier* target, int targetIdx, std::vector<Soldier*>& squad)
 {
-	if (targets->getHealth() > 0 && getIndex() != targets->getIndex())
+	if (this == target)
 	{
-		index *= defaultDistance;
-		if (index == 0)
-		{
-			index = defaultDistance;
-		}
+		return;
+	}
 
-		if (minAttackDistance >= index && maxAttackDistance <= index)
-		{
-			std::cout << "The archer attacked!\n";
+	if (target->getHealth() <= 0)
+	{
+		return;
+	}
 
-			targets->removeHealth(25);
-		}
+	if (stamina < 10)
+	{
+		rest(); 
+		return;
+	}
 
+	int distance = std::abs(index - targetIdx) * 10;
+
+	if (canReach(distance))
+	{
+		std::cout << "Archer (Ind: " << index << ") shoots " << targetIdx << "!\n";
+		target->removeHealth(25);
 		removeStamina(10);
+	}
+	else
+	{
+		std::cout << "Archer missed (Range mismatch)!\n";
+		removeStamina(5);
 	}
 }

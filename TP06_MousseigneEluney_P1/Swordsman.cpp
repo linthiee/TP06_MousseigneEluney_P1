@@ -11,23 +11,35 @@ Swordsman::~Swordsman()
 {
 }
 
-void Swordsman::attack(Soldier* targets, int index)
+void Swordsman::attack(Soldier* target, int targetIdx, std::vector<Soldier*>& squad)
 {
-	if (targets->getHealth() > 0 && getIndex() != targets->getIndex())
+	if (this == target)
 	{
-		index *= defaultDistance;
-		if (index == 0)
-		{
-			index = defaultDistance;
-		}
+		return;
+	}
 
-		if (attackRadius <= index)
-		{
-			std::cout << "The swordsman attacked!\n";
+	if (target->getHealth() <= 0)
+	{
+		return;
+	}
 
-			targets->removeHealth(30);
-		}
+	if (stamina < 10)
+	{
+		rest();
+		return;
+	}
 
-		removeStamina(15);
+	int distance = std::abs(index - targetIdx) * 10;
+
+	if (canReach(distance))
+	{
+		std::cout << "Swordsman (Ind: " << index << ") slashes target " << targetIdx << "!\n";
+		target->removeHealth(30);
+		removeStamina(10);
+	}
+	else
+	{
+		std::cout << "Swordsman missed (Too far)!\n";
+		removeStamina(5);
 	}
 }

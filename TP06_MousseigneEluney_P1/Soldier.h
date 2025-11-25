@@ -1,6 +1,7 @@
 #pragma once
 #include "Globals.h"
 #include <iostream>
+#include <vector>
 
 class Soldier
 {
@@ -27,8 +28,9 @@ public:
 	void setIndex(int index);
 	int getIndex();
 
-	virtual void attack(Soldier* targets, int index);
 	virtual void rest();
 
+	virtual void attack(Soldier* target, int targetIdx, std::vector<Soldier*>& squad) = 0;
+	virtual bool canReach(int distance) = 0;
 };
 
